@@ -38,8 +38,6 @@
         return $displayEachNotes;  
     }
 
-
-
     function calculerMoyenne(array $notes) : float {
         $nbNotes = count($notes);
         $sommeNotes = array_sum($notes);
