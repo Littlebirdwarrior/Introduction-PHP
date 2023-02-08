@@ -23,13 +23,39 @@ echo "<b>Affichage :</b> <br>
     ";
 
 
-//Résolution
+//Résolution : je calcule le nb de billet à rendre, puis je mets à jours le solde du reste à payé
 
-$billet10 = $restePayer % 10;
-$billet5 = $billet10 %5;
-$billet2 = $billet5 % 2;
-$billet1 = $billet2 % 1;
+//Billet de 10
+$nbBillets10 = intdiv($restePayer,10);
+//var_dump("Nombre de billets de 10 : ". $nbBillets10);
 
-echo $billet1;
+$restePayer = $restePayer % 10;
+//var_dump("Reste à payé:". $restePayer. "€ <br>");
 
-//test
+//Billet de 5
+$nbBillets5 = intdiv($restePayer, 5);
+//var_dump("Nombre de billets de 5 : ". $nbBillets5);
+
+$restePayer = $restePayer % 5;
+//var_dump("Reste à payé:". $restePayer. "€ <br>");
+
+//Piece de 2
+$nbPieces2 = intdiv($restePayer, 2);
+//var_dump("Nombre de pièces de 2 : ". $nbBillets5);
+
+$restePayer = $restePayer % 2;
+//var_dump("Reste à payé:". $restePayer. "€ <br>");
+
+//Piece de 1
+$nbPieces1 = intdiv($restePayer, 1);
+//var_dump("Nombre de pièces de 1 : ". $nbBillets1);
+
+$restePayer = $restePayer % 1;
+//var_dump("Reste à payé:". $restePayer. "€ <br>");
+
+
+//Affichage :
+
+echo "<b>Affichage :</b> <br>
+    Rendue de monnaie : <br>".
+    $nbBillets10 ." billets de 10 € et ". $nbBillets5. " billet de 5 € et ". $nbPieces2. " pièce de 2 € et ". $nbPieces1. " pièce de 1 €";
