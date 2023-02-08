@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PHP introduction - Partie 2 - Exo 1</title>
+    <title>PHP introduction - Partie 2 - Exo 3</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <h1>PHP introduction - Partie 2 - Exo 1</h1>
+    <h1>PHP introduction - Partie 2 - Exo 3</h1>
     <p> <b>Consignes : </b><br>
         Afficher un lien hypertexte permettant d’accéder au site d’Elan Formation. Le lien devra s’ouvrir dans un nouvel onglet (_blank).<br>
     </p>
