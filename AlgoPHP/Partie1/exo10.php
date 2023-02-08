@@ -31,3 +31,5 @@ $billet2 = $billet5 % 2;
 $billet1 = $billet2 % 1;
 
 echo $billet1;
+
+//test
