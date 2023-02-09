@@ -9,12 +9,37 @@
 <body>
     <h1>PHP introduction - Partie 2 - Exo 1</h1>
     <p> <b>Consignes : </b><br>
-
+    Créer une fonction personnalisée permettant de remplir une liste déroulante à partir d'un tableau de valeurs.<br>
+    Exemple :<br>
+    $elements = array("Monsieur","Madame","Mademoiselle");<br>
+    alimenterListeDeroulante($elements);<br>
     </p>
 
     <!--Mon PHP---->
     <?php 
+
+    echo "<br><h2>Affichage : </h2><br>";
     
+    //Mes variables
+    $elements = array("Monsieur","Madame","Mademoiselle");
+
+    //Ma fonction
+    function alimenterListeDeroulante($elements) {
+        //Je crée mon select
+        echo '<label for="select">Choose an option:</label>
+                <select name="select" id="select">';
+        //Ma boucle foreach définis une option pour chaque élément du array
+        foreach ($elements as $elementOption) {
+            $elementValue = strtolower($elementOption);
+        echo '<option value="' . $elementValue .'">' . $elementOption .'</option>
+        ';
+        }
+        //fermeture du select
+        echo '</select>';
+    }
+
+    //Appel de la fonction
+    echo alimenterListeDeroulante($elements);
     
     
     ?>
