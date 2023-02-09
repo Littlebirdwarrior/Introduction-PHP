@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PHP introduction - Partie 2 - Exo 1</title>
+    <title>PHP introduction - Partie 2 - Exo 8</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         figure, img {
@@ -33,7 +33,7 @@
     </style>
 </head>
 <body>
-    <h1>PHP introduction - Partie 2 - Exo 1</h1>
+    <h1>PHP introduction - Partie 2 - Exo 8</h1>
     <p> <b>Consignes : </b><br>
     Soit l’URL suivante : http://my.mobirise.com/data/userpic/764.jpg<br>
     Créer une fonction personnalisée permettant d’afficher l’image N fois à l’écran.<br>
