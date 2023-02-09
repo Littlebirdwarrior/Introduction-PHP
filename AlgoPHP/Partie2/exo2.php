@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PHP introduction - Partie 2 - Exo 1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
     <h1>PHP introduction - Partie 2 - Exo 1</h1>
     <p> <b>Consignes : </b><br>
-    $capitales = array ("France"=>"Paris","Allemagne"=>"Berlin","USA"=>"Washington","Italie"=>"Rome");<br>
-    Réaliser un algorithme permettant d’afficher le tableau HTML suivant (notez que le nom du pays s’affichera en majuscule et que<br> 
-    le tableau est trié par ordre alphabétique du nom de pays) grâce à une fonction personnalisée.<br>
-    Vous devrez appeler la fonction comme suit : afficherTableHTML($capitales);
+        $capitales = array ("France"=>"Paris","Allemagne"=>"Berlin","USA"=>"Washington","Italie"=>"Rome");<br>
+        Réaliser un algorithme permettant d’afficher le tableau HTML suivant (notez que le nom du pays s’affichera en majuscule et que<br>
+        le tableau est trié par ordre alphabétique du nom de pays) grâce à une fonction personnalisée.<br>
+        Vous devrez appeler la fonction comme suit : afficherTableHTML($capitales);
 
     </p>
 
     <!--Mon PHP---->
-    <?php 
-    
+    <?php
+
     //Un tableau associatif
     $capitales = [
         "France" => "Paris",
@@ -53,16 +55,17 @@
     ";
 
     //voici mes boucles
-    foreach ($capitales as $pays => $capitale){
+    foreach ($capitales as $pays => $capitale) {
         echo "<tr>
-                <td>". $pays . "</td>
-                <td>". $capitale."</td>
+                <td>" . $pays . "</td>
+                <td>" . $capitale . "</td>
             </tr>";
     }
 
     //je ferme ma table
     echo "</table>";
     ?>
-    
+
 </body>
+
 </html>

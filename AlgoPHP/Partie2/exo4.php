@@ -69,12 +69,12 @@
 
     //voici ma boucles, je crée une valeurs hrefwiki pour concaténer le path et le pays
     foreach ($capitales as $pays => $capitale) {
-        $racinePathWiki = "https://fr.wikipedia.org/wiki/". $pays;
-        $hrefWiki = ' href = "'. $racinePathWiki .' " ';
+        $racinePathWiki = "https://fr.wikipedia.org/wiki/" . $pays;
+        $hrefWiki = ' href = "' . $racinePathWiki . ' " ';
         echo "<tr>
                     <td>" . $pays . "</td>
                     <td>" . $capitale . "</td>
-                    <td><a". $hrefWiki . "> Lien</a></td>
+                    <td><a" . $hrefWiki . "> Lien</a></td>
                 </tr>";
     }
 
