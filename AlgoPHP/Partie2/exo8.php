@@ -54,7 +54,10 @@
     function afficherImage($url, $n){
     $imageSrc = ' src ="'. $url. '"';
     
+    echo "<h2>Affichage :</h2>";
+    
     //Mon encart pour les image
+
     echo '<div class="images">';
     
     //je vérifie le type de mes variables, en cas de défault, une alerte s'affiche
@@ -70,7 +73,6 @@
     } else { 
         echo "<p>Alerte : L'url ou le nombre d'affichage demandé sont invalide</p><br>";
     }
-    
 
     }
 
