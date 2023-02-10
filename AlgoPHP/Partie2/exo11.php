@@ -11,40 +11,41 @@
 <body>
     <h1>PHP introduction - Partie 2 - Exo 11</h1>
     <p> <b>Consignes : </b><br>
-    Ecrire une fonction personnalisée qui affiche une date en français (en toutes lettres) à partir d'une
-    chaîne de caractère représentant une date.<br>
-    Exemple :<br>
-    formaterDateFr("2018-02-23");
-    Affichage<br>
-    vendredi 23 février 2018<br>
+        Ecrire une fonction personnalisée qui affiche une date en français (en toutes lettres) à partir d'une
+        chaîne de caractère représentant une date.<br>
+        Exemple :<br>
+        formaterDateFr("2018-02-23");
+        Affichage<br>
+        vendredi 23 février 2018
+        <a src="https://www.develop4fun.fr/afficher-la-date-du-jour-en-francais-avec-php/">source develop4fun.fr</a><br>
     </p>
 
     <!--Mon PHP---->
     <?php
 
     //mes variables
-    $date = 2018-02-23;
 
-    //*Comment formater une date
-    echo date('j-m-Y'). '<br>';
-    echo date('l d m Y h:i:s'). '<br>';
-    echo date('l F Y'). '<br>';
-    echo date('r'). '<br>';
-    
-    date_default_timezone_set('Europe/Paris');//Paris = GMT+1
-    
-    $date = '27-09-2013';
-    echo date('Y/m/d H:i:s', strtotime($date)). '<br>';
+    $date = "2018-02-23";
+    echo formaterDateFr($date);
 
-    echo date('Y-m-d H:i:s', strtotime($date)). '<br>';
+    // Définition de la fonction
 
-    setlocale(LC_TIME, "fr_FR");
+    function formaterDateFr($date){ 
 
-    // DEVIENT
-    $formaterDateFr = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFormatter::NONE);
+        // Utilisation intldateformatter  
+        $dateFr = new DateTime($date);  
+        $fonctionDateFormat = new IntlDateFormatter(
+            "fr_FR",
+            IntlDateFormatter::FULL,//ajoute le jour de la semaine
+            IntlDateFormatter::NONE,//supprime les heure après
+            'Europe/Paris', 
+            IntlDateFormatter::GREGORIAN  );  
 
-    echo $formaterDateFr->format(time());
+        //Mise en forme de la date 
 
+        $fonctionDateFormat->setPattern('EEEE dd MMMM YYYY');  //ce pattern crée le format (jours date mois année)
+        return $fonctionDateFormat->format($dateFr);
+    };
 
 
 
