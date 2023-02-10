@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>PHP introduction - Partie 2 - Exo 1</h1>
+    <h1>PHP introduction - Partie 2 - Exo 11</h1>
     <p> <b>Consignes : </b><br>
 
     </p>
