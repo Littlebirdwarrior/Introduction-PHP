@@ -9,6 +9,12 @@
 <body>
     <h1>PHP introduction - Partie 2 - Exo 1</h1>
     <p> <b>Consignes : </b><br>
+    Ecrire une fonction personnalisée qui affiche une date en français (en toutes lettres) à partir d’une
+    chaîne de caractère représentant une date.<br>
+    Exemple :<br>
+    formaterDateFr("2018-02-23");<br>
+    Affichage<br>
+    vendredi 23 février 2018<br>
 
     </p>
 

@@ -83,6 +83,8 @@
             <form/>';
     };
 
+    echo "<b>Affichage</b>";
+
     displayForm($elementsField, $elementsChoice);
 
     ?>
