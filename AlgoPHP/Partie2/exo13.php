@@ -9,12 +9,40 @@
 <body>
     <h1>PHP introduction - Partie 2 - Exo 1</h1>
     <p> <b>Consignes : </b><br>
+    Créer une classe Voiture possédant les propriétés suivantes : marque, modèle, nbPortes et vitesseActuelle ainsi que les méthodes demarrer( ), accelerer( ) et stopper( ) en plus des accesseurs (get) et mutateurs (set) traditionnels. La vitesse initiale de chaque véhicule
+    instancié est de 0. Une méthode personnalisée pourra afficher toutes les informations d'un véhicule.
+    v1 ➔ "Peugeot","408",5
+    v2 ➔ "Citroën","C4",3
+    Coder l'ensemble des méthodes, accesseurs et mutateurs de la classe tout en réalisant des jeux de tests pour vérifier la cohérence de la classe Voiture. Vous devez afficher les tests et les éléments
+    suivants :
 
     </p>
 
     <!--Mon PHP---->
     <?php 
+    class Personne
+    {
+        // déclaration d'une propriété privée (déclarer en public = mauvaise pratique)
+            private string $_marque;
+            private string $_modele;
+            private int $_nbPortes;
+            private bool $_demarrer;
     
+        // déclaration des méthodes avec $this
+        public __construct {
+                        $this-> _nom -> $nom;
+                       $this-> _prenom -> $prenom;
+                       $this-> _sexe -> $sexe;
+                       $this-> _dateNaissance -> new DateTime($dateNaissance);
+       }
+
+            //setter et setter ( toujours en couple, correspond au nombre de méthode)
+            //modele
+
+
+    }
+    
+
     
     
     ?>
