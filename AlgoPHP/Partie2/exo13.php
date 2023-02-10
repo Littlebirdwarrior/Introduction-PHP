@@ -26,19 +26,28 @@
             private string $_marque;
             private string $_modele;
             private int $_nbPortes;
+            private int $_vitesseActuelle;
             private bool $_demarrer;
     
         // déclaration des méthodes avec $this
-        public __construct {
-                        $this-> _nom -> $nom;
-                       $this-> _prenom -> $prenom;
-                       $this-> _sexe -> $sexe;
-                       $this-> _dateNaissance -> new DateTime($dateNaissance);
-       }
-
+            public function __construct( string $marque, string $modele, int $nbPortes, int $vitesseActuelle, bool $demarrer){
+                $this -> _marque;
+                $this -> _modele;
+                $this -> _nbPortes;
+                $this -> _vitesseActuelle;
+                $this -> _demarrer;
+            
+            }
             //setter et setter ( toujours en couple, correspond au nombre de méthode)
             //modele
 
+            public function getMarque(){
+                $this -> $this _marque;
+            }
+
+            public function setMarque( string $marque){
+                $this -> $this _marque;
+            }
 
     }
     
