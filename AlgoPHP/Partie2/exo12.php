@@ -14,17 +14,9 @@
     $tableauValeurs=array(true,"texte",10,25.369,array("valeur1","valeur2"));<br>
     A l'aide d'une boucle, afficher les informations des variables contenues dans le tableau.<br>
     </p>
-    <p>
-    Affichage
-    bool(true)
-    string(5) "texte"
-    int(10)
-    float(25.369)
-    array(2) { [0]=> string(7) "valeur1" [1]=> string(7) "valeur2" }
-    </p>
-
+    
         <!--Mon PHP---->
-        <?php
+    <?php
 
         //mes variables
             $tableauValeurs=array(true,
@@ -32,14 +24,29 @@
                                 10,25.369,
                                 array("valeur1","valeur2"));
 
-        var_dump($tableauValeurs);
+        //mes fonction
+        function displayTable($tableauValeurs){
+            foreach($tableauValeurs as $valeurs){
+                echo '<tr><td>';
+                var_dump($valeurs); //NB: on ne peut pas faire echo de var_dump !!!
+                echo '</td></tr>';
 
-        //Ma fonction
-
-
-
-
-?>
+            }
+        };
+    ?>
+    <!--Mon affichage (pour que ce soit plus claire, je gère la tache à part)-->
+    <table>
+        <thead>
+            <tr>
+                        <th >The table header</th>
+             </tr>
+        </thead>
+        <tbody>
+                    <?php
+                    displayTable($tableauValeurs);
+                    ?>
+        </tbody> 
+    </table>
     
 </body>
 </html>
