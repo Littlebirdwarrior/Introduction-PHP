@@ -11,13 +11,14 @@
             max-width: 500px;
         }
 
-        form fieldset > input:first-of-type{
-            width: 100%;
+        form fieldset input[type="text"]{
+            width: 98%;
+            margin-bottom: 2px;
         }
 
         form fieldset > div {
             background-color: #ddd;
-            margin: 5px;
+            margin: 5px 0;
             padding: 5px;
             border: 1px black solid;
         }
@@ -31,20 +32,6 @@
     Le formulaire devra également comporter un bouton permettant de le soumettre à un traitement de validation (submit).<br>
 
     </p>
-    <form>
-        <fieldset>
-                <legend>Vos informations</legend>
-            <label for="nom">Nom :</label>
-            <input type="text" name="nom" id="nom" value="" placeholder="votre nom" ></input>
-            <div>
-                <legend>Votre formation</legend>
-                <input type="radio" name="designer web" id="designer web" value="designe rweb" ></input>
-                <label for="designer web">Designer web</label>
-            </div>
-            <input type="submit" value="submit"></input>
-
-        </fieldset>
-    </form>
 
     <!--Mon PHP---->
     <?php
@@ -59,12 +46,44 @@
 
     //Mes fonctions
 
-    foreach ($elementsField as $field) {
-        $lowerField = strtolower ($field);
-        $validField = htmlspecialchars($lowerField);
-        echo '<label for="'.$field.'">'. $field.' : </label>
-        <input type="' . $validField.'" name=" ' . $validField.' " id="' . $validField.'" value="" placeholder="Votre '. $validField.'" ></input>';
-    }
+    function displayForm($elementsField, $elementsChoice){
+
+        echo "<form>
+                <fieldset>
+                    <legend><b>Vos informations</b></legend>";
+    
+        //mes fields
+        foreach ($elementsField as $field) {
+            //supprimer charactère speciaux et mettre en minuscule
+            $lowerField = strtolower ($field);
+            $validField = htmlspecialchars($lowerField);
+            //afficher mes fields
+            echo '<label for="'.$field.'">'. $field.' : </label>
+            <input type="text" name=" ' . $validField.' " id="' . $validField.'" value="" placeholder="Votre '. $validField.'" ></input><br>';
+        }
+    
+        //mes radios
+        foreach($elementsChoice as $choiceCategory => $choices) {
+            echo ' <div>
+                    <legend><b> Votre '.$choiceCategory.'</b></legend>';
+            //extraire mes choix radio de leur table
+            foreach($choices as $choice){
+                //supprimer charactère speciaux et mettre en minuscule
+                $lowerChoice = strtolower($choice);
+                $validChoice = htmlspecialchars($lowerChoice);
+                //afficher mes radios
+                echo ' <input type="radio" name="'.$validChoice.'" id="'.$validChoice.'" value="'.$validChoice.'" ></input>
+                        <label for="designer web">'.$choice.'</label><br>';
+            };
+            echo '</div>';
+        }
+    
+        echo '      <input type="submit"></input>
+                </fieldset>
+            <form/>';
+    };
+
+    displayForm($elementsField, $elementsChoice);
 
     ?>
 
