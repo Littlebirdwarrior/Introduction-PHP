@@ -14,13 +14,15 @@
     v1 ➔ "Peugeot","408",5
     v2 ➔ "Citroën","C4",3
     Coder l'ensemble des méthodes, accesseurs et mutateurs de la classe tout en réalisant des jeux de tests pour vérifier la cohérence de la classe Voiture. Vous devez afficher les tests et les éléments
-    suivants :
+    suivants :<br>
+
+    source <a href="https://coding-champ.com/tutorials/php/getters-and-setters">https://coding-champ.com/tutorials/php/getters-and-setters</a>
 
     </p>
 
     <!--Mon PHP---->
     <?php 
-    class Personne
+    class Voiture
     {
         // déclaration d'une propriété privée (déclarer en public = mauvaise pratique)
             private string $_marque;
@@ -30,22 +32,38 @@
             private bool $_demarrer;
     
         // déclaration des méthodes avec $this
-            public function __construct( string $marque, string $modele, int $nbPortes, int $vitesseActuelle, bool $demarrer){
+            public function __construct( string $marque){ //, string $modele, int $nbPortes, int $vitesseActuelle, bool $demarrer
                 $this -> _marque;
-                $this -> _modele;
-                $this -> _nbPortes;
-                $this -> _vitesseActuelle;
-                $this -> _demarrer;
+                // $this -> _modele;
+                // $this -> _nbPortes;
+                // $this -> _vitesseActuelle;
+                // $this -> _demarrer;
             
             }
             //setter et setter ( toujours en couple, correspond au nombre de méthode)
+            
             //modele
 
+            public function getMarque() {
+                return $this->_marque;
+            }
+
+            public function setMarque(string $marque){
+				$this -> _marque = $marque;
+		    }
+
+            public function printData()
+            {
+                echo "Marque: " . $this->_marque . "\n";
+            }
 
     }
-    
 
-    
+    $Voiture = new Voiture();//Ne tjs pas marche pas !!!
+    $Voiture->setMarque("Peugeot");
+
+    echo $Voiture->printData();
+ 
     
     ?>
     
