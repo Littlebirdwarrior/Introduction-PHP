@@ -59,7 +59,7 @@
 
     }
 
-    $Voiture = new Voiture();//Ne tjs pas marche pas !!!
+    $Voiture = new Voiture;//Ne tjs pas marche pas !!!
     $Voiture->setMarque("Peugeot");
 
     echo $Voiture->printData();
