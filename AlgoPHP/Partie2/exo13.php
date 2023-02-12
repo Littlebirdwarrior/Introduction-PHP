@@ -41,13 +41,6 @@
             //setter et setter ( toujours en couple, correspond au nombre de méthode)
             //modele
 
-            public function getMarque(){
-                $this -> $this _marque;
-            }
-
-            public function setMarque( string $marque){
-                $this -> $this _marque;
-            }
 
     }
     
