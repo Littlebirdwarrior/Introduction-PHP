@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PHP introduction - Partie 2 - Exo 1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .grey{
+            background : #ddd;
+            width : 500px;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>PHP introduction - Partie 2 - Exo 1</h1>
@@ -164,11 +172,13 @@
             //**FonctionJ'affiche ma voiture
             public function __toString(){
                 return 
-                $this->getMarque(). 
-                ", " .$this->getModele(). 
-                ", à" .$this->getNbPortes(). "portes, "
-                . $this->getEtat().", 
-                " .$this->getVitesse(). "<br>";
+                "<div>
+                <b>Infos véhicule : </b><br>
+                Nom et modèle du véhicule :". $this->getMarque(). " " .$this->getModele(). "<br>
+                Nombre de portes :" .$this->getNbPortes(). "<br>"
+                . $this->getEtat()."<br>" 
+                .$this->getVitesse(). "<br>
+                </div>";
             }
 
     }
@@ -176,14 +186,15 @@
     //**Je crée mes véicules
 
     $v1 = new Voiture("Peugeot", "308", 5);
-    echo "Ma voiture v1 : ". $v1;
-
+    
     $v2 = new Voiture("Citroën","C4",3);
-    echo "Ma voiture v2 : ". $v2;
 
+    //**Affichage */
+
+    //bloc 1
+    echo '<div class="grey">';
     $v1->demarrer();
     $v2->demarrer();
-
 
     $v1->accelerer(20);
     $v1->accelerer(20);
@@ -191,6 +202,14 @@
     $v1->ralentir(10);
 
     $v2->stopper();
+    echo "</div>";
+
+    //bloc 2
+
+    echo '<div class="grey">';
+    echo $v1;
+    echo $v2;
+    echo "</div>";
 
 
 
