@@ -18,6 +18,10 @@
 
     source <a href="https://coding-champ.com/tutorials/php/getters-and-setters">https://coding-champ.com/tutorials/php/getters-and-setters</a>
 
+        <!--    //spl_autoload_register(function ($class_name) {
+        // require_once $class_name . '.php';
+        // });-->
+
     </p>
 
     <!--Mon PHP---->
@@ -31,13 +35,14 @@
             private int $_vitesseActuelle;
             private bool $_demarrer;
     
-        // déclaration des méthodes avec $this
-            public function __construct( string $marque){ //, string $modele, int $nbPortes, int $vitesseActuelle, bool $demarrer
-                $this -> _marque;
-                // $this -> _modele;
-                // $this -> _nbPortes;
-                // $this -> _vitesseActuelle;
-                // $this -> _demarrer;
+        // déclaration des méthodes avec $this (j'associe un nom a une variable)
+            public function __construct( string $marque, string $modele, int $nbPortes){ //
+                $this -> _marque = $marque;
+                $this -> _modele = $modele;
+                $this -> _nbPortes= $nbPortes;
+                //ces valeurs sont définie ici, pas besoin de les mettre dans les arguments
+                $this -> _vitesseActuelle = 0;
+                $this -> _demarrer = false;
             
             }
             //setter et setter ( toujours en couple, correspond au nombre de méthode)
@@ -52,19 +57,113 @@
 				$this -> _marque = $marque;
 		    }
 
-            public function printData()
-            {
-                echo "Marque: " . $this->_marque . "\n";
+            //modele
+            public function getModele() {
+                return $this->_modele;
+            }
+
+            public function setModele(string $modele){
+				$this -> _modele = $modele;
+		    }
+
+            //nb porte
+            public function getNbPortes() {
+                return $this->_nbPortes;
+            }
+
+            public function setNbPortes(int $nbPortes){
+				$this -> _nbPortes = $nbPortes;
+		    }
+
+            
+            //ma fonction démarrer
+            
+            public function getDemarrer() {
+                return $this->_demarrer;
+            }
+            
+            public function getEtat(){
+                if($this->_demarrer == 1) {
+                    return "La voiture est démarrée";
+                } 
+                    else {
+                    return " la voiture n'est pas démarrée";
+                }
+            }
+            
+            public function setDemarrer(bool $demarrer){
+                $this -> _demarrer = $demarrer;//j'appelle ma valeur true dans le setter
+		    }
+            
+            //Je change la valeurs de $demarrer
+            public function demarrer(){
+                $this -> setDemarrer(true);
+                echo "le véhicule " . $this->getModele(). "est demarrer."
+            }
+            
+            //Je change la valeurs de $demarrer
+            public function stopper(){
+                $this -> setDemarrer(false);
+                //
+            }
+            
+            //fonction accelerer()
+            
+            public function getVitesseActuelle(){
+                return $this -> _vitesseActuelle;
+            }
+            
+            public function setVitesseActuelle(int $nouvelleVitesse){
+                $this -> _vitesseActuelle = $nouvelleVitesse;
+            }
+            
+            public function accelerer(int $vitesseAccel){
+                echo "le véhicule " . $this->getModele(). " veut accélerer de "  .$vitesseAccel . "<br>" ;
+                // if demarrer = false
+                if (demarrer = false) {
+                    echo $this->getMarque(). "n'est pas démarré"
+                }
+                // 
+                //else {
+                    $addVitesse = $this->_vitesseActuelle + $vitesseAccel;
+                    $this->setVitesseActuelle( $addVitesse);
+                    echo "le véhicule accelère de" . $addVitesse ."km/h"
+                } 
+                
+            }
+            
+            //J'affiche ma voiture
+            public function __toString(){
+                return $this->getMarque(). ", " .$this->getModele(). ", " .$this->getNbPortes(). ", ". $this->getEtat().", " .$this->getVitesseActuelle(). "<br>";
             }
 
     }
 
-    $Voiture = new Voiture;//Ne tjs pas marche pas !!!
-    $Voiture->setMarque("Peugeot");
+    //Je crée mes véicules
 
-    echo $Voiture->printData();
+    $v1 = new Voiture("Peugeot", "308", 5);
+    echo "Ma voiture v1 : ". $v1;
+
+    $v2 = new Voiture("Citroën","C4",3);
+    echo "Ma voiture v2 : ". $v2;
+
+    $v1->setDemarrer(true);
+
+    $v1->accelerer(20);
+    echo "Ma voiture v1 : ". $v1;
+
+    //Test demarrer
+    var_dump($v1->getDemarrer());
+
+    $v1->setDemarrer(true);
+    //Ma valeurs à bien été changée
+    var_dump($v1->getDemarrer());
+
+
+
+
  
-    
+
     ?>
     
 </body>
